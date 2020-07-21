@@ -5,12 +5,19 @@ import Inicio from '@/views/Inicio.vue'
 import Login from '@/views/Login.vue'
 import Verify from '@/views/Verify.vue'
 import VueAxios from 'vue-axios'
-import axios from 'axios'  
+import axios from 'axios'
+require('dotenv').config();
 
 Vue.use(VueAxios, axios)
 
 // Agregamos la URL base de nuestra API
-axios.defaults.baseURL = 'https://your-clock.herokuapp.com/api';
+if(process.env.NODE_ENV === 'development'){
+  axios.defaults.baseURL = process.env.VUE_APP_HOST_LOCAL+'/api';
+}else{
+  axios.defaults.baseURL = process.env.VUE_APP_HOST+'/api';
+}
+console.log(axios.defaults.baseURL)
+console.log(process.env.NODE_ENV)
 
 Vue.use(VueRouter)
 

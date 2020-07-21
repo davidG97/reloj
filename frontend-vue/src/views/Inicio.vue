@@ -64,8 +64,13 @@ export default {
         }
     },
     created() {
+        if(process.env.NODE_ENV === 'development'){
+            const URL = process.env.VUE_APP_HOST_LOCAL;
+        }else{
+            const URL = process.env.VUE_APP_HOST;
+        }
         this.enviar();
-        this.socket = io('https://your-clock.herokuapp.com');
+        this.socket = io(URL);
     },
     async mounted(){
         await this.socket.on('datos', data => {

@@ -14,7 +14,11 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 Vue.use(VueAxios, axios)
 
 // Agregamos la URL base de nuestra API
-axios.defaults.baseURL = 'https://your-clock.herokuapp.com/api';
+if(process.env.NODE_ENV === 'development'){
+  axios.defaults.baseURL = process.env.VUE_APP_HOST_LOCAL+'/api';
+}else{
+  axios.defaults.baseURL = process.env.VUE_APP_HOST+'/api';
+}
 
 Vue.config.productionTip = false
 
