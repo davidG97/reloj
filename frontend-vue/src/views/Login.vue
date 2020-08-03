@@ -26,6 +26,11 @@
                 Error, compruebe su conexion e intentelo de nuevo
             </b-alert>
         </div>
+        <div v-else-if="state == 402">
+            <b-alert show dismissible variant="danger">
+                Error al enviar el correo, verifique su conexion, si el error persiste, intente mas tarde
+            </b-alert>
+        </div>
         <br>
         Nombre: <b-form-input type="text" v-model="userName" :state="comprobarName" size="sm" placeholder="Escriba su nombre completo"></b-form-input>
         <br>
@@ -38,7 +43,8 @@
         <div>
             <b-button @click="enviar" variant="outline-success">Registrarse</b-button>
         </div>
-        <br><br>
+        <br>
+        <br>
     </div>
 </template>
 
@@ -60,16 +66,16 @@ export default{
     },
     computed:{
         comprobarName(){
-        return this.userName.length > 0 ? true : false
+            return this.userName.length > 0 ? true : false
         },
         comprobarEmail(){
-        return this.userEmail.length > 0 ? true : false
+            return this.userEmail.length > 0 ? true : false
         },
         comprobarPassword(){
-        return this.userPassword.length > 0 ? true : false
+            return this.userPassword.length > 0 ? true : false
         },
         comprobarCity(){
-        return this.userCity.length > 0 ? true : false
+            return this.userCity.length > 0 ? true : false
         }
     },  
     methods:{

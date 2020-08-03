@@ -35,7 +35,13 @@
         <br>
         Contraseña: <b-form-input type="password" v-model="userPassword" :state="comprobarPassword" size="sm" placeholder="Escriba su contraseña"></b-form-input>
         <br>
-        <b-button @click="enviar" variant="outline-success">Ingrese</b-button>
+        <div>
+            <b-link href="#/ForgotPassword">Olvide mi contraseña</b-link>
+        </div>
+        <br>
+        <div>
+            <b-button @click="enviar" variant="outline-success">Ingrese</b-button>
+        </div>
         <div v-if="this.loading == false">
             
         </div>
@@ -44,7 +50,8 @@
                 <b-spinner class="float-right" label="Floated Right"></b-spinner>
             </div>
         </div>
-        <br><br>
+        <br>
+        <br>
     </div>
 </template>
 

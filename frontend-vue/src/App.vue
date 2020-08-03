@@ -18,7 +18,7 @@
 						<b-dropdown-item href="#/Login">Registrese</b-dropdown-item>
 						<b-dropdown-item href="#/Auth">Ingrese</b-dropdown-item>
 						<b-dropdown-item-button @click="salir">Salir</b-dropdown-item-button>
-					</b-nav-item-dropdown>
+          </b-nav-item-dropdown>
 				 </b-navbar-nav>
 			</b-collapse>
 		</b-container>
@@ -41,8 +41,8 @@ export default {
 		salir(){
 			let vue=this
 			console.log("Has salido")
-			localStorage.token = 401
-			vue.$router.push('/home')
+			localStorage.token = null
+			vue.$router.push('/auth')
 		}
 	}
 }

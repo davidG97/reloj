@@ -4,6 +4,10 @@ import Auth from '@/views/Auth.vue'
 import Inicio from '@/views/Inicio.vue'
 import Login from '@/views/Login.vue'
 import Verify from '@/views/Verify.vue'
+import Settings from '@/views/Settings.vue'
+import ForgotPassword from '@/views/ForgotPassword.vue'
+import Home from '@/views/Home.vue'
+import RecoveryPassword from '@/views/RecoveryPassword.vue'
 import VueAxios from 'vue-axios'
 import axios from 'axios'
 require('dotenv').config();
@@ -61,6 +65,38 @@ const router = new VueRouter({
       path: '/verify',
       name: 'verify', 
       component: Verify,
+      meta: {
+        autentificado: false
+      }
+    },
+    {
+      path: '/settings',
+      name: 'settings',
+      component: Settings,
+      meta: {
+        autentificado: true
+      }
+    },
+    {
+      path: '/forgotpassword',
+      name: 'forgotpassword',
+      component: ForgotPassword,
+      meta: {
+        autentificado: false
+      }
+    },
+    {
+      path: '/home',
+      name: 'home',
+      component: Home,
+      meta: {
+        autentificado: false
+      }
+    },
+    {
+      path: '/recoverypassword/:id',
+      name: 'recoverypassword',
+      component: RecoveryPassword,
       meta: {
         autentificado: false
       }
