@@ -17,7 +17,7 @@
         <br>
         Nueva contraseña: <b-form-input type="password" v-model="userPassword" :state="comprobarPassword" size="sm" placeholder="Escriba su contraseña"></b-form-input>
         <br>
-        Repita la contraseña: <b-form-input type="password" v-model="userPasswordVerification" :state="comprobarPassword" size="sm" placeholder="Escriba de nuevo su contraseña"></b-form-input>
+        Repita la contraseña: <b-form-input type="password" v-model="userPasswordVerification" :state="comprobarPasswordVerification" size="sm" placeholder="Escriba de nuevo su contraseña"></b-form-input>
         <br>
         <div>
             <b-button @click="enviar" variant="outline-success">Cambiar</b-button>
@@ -41,6 +41,9 @@ export default {
     computed:{
         comprobarPassword(){
             return this.userPassword.length > 0 ? true : false
+        },
+        comprobarPasswordVerification(){
+            return this.userPasswordVerification.length > 0 ? true : false
         }
     },
     methods:{
@@ -62,6 +65,10 @@ export default {
                         vue.$router.push('/auth')
                     }
                 })
+                .catch(function (error) {
+                    console.log("ERROR: "+error);
+                    vue.$router.push('/error')
+                });
             }
         }
     }

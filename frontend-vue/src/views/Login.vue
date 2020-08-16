@@ -98,6 +98,7 @@ export default{
             })
             .catch(function (error) {
                 console.log("ERROR: "+error);
+                vue.$router.push('/error')
             });
         }
     }

@@ -7,6 +7,7 @@ import Verify from '@/views/Verify.vue'
 import Settings from '@/views/Settings.vue'
 import ForgotPassword from '@/views/ForgotPassword.vue'
 import Home from '@/views/Home.vue'
+import Errors from '@/views/Error.vue'
 import RecoveryPassword from '@/views/RecoveryPassword.vue'
 import VueAxios from 'vue-axios'
 import axios from 'axios'
@@ -97,6 +98,14 @@ const router = new VueRouter({
       path: '/recoverypassword/:id',
       name: 'recoverypassword',
       component: RecoveryPassword,
+      meta: {
+        autentificado: false
+      }
+    },
+    {
+      path: '/error',
+      name: 'error',
+      component: Errors,
       meta: {
         autentificado: false
       }

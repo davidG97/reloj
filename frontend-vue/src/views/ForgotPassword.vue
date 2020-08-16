@@ -74,7 +74,7 @@ export default {
             })
             .catch(function(error){
                 console.log("ERROR: "+error)
-                //redirect a pantalla de error
+                vue.$router.push('/error')
             });
         }
     }
