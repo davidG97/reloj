@@ -1,13 +1,20 @@
 **Para lanzar en modo desarrollo:**
 
 **EN UNA TERMINAL**
+...
 cd reloj/your-clock
+...
 npm run devbabel
+...
 **EN OTRA TERMINAL**
+...
 cd reloj/frontend-vue
+...
 npm run serve
+...
 
 abrir http://localhost:8080/
+
 
 **NOTA:** Si se usa el locahost:3000 se usara en modo produccion, por lo cual no tomara todas las API's de desarrollo sino las de produccion, es decir, las desplegadas en heroku
 
