@@ -1,17 +1,19 @@
-**Para lanzar en modo desarrollo:**
+# **Para lanzar en modo desarrollo:**
 
-**EN UNA TERMINAL**
-...
+## **EN UNA TERMINAL**
+```
 cd reloj/your-clock
-...
+```
+```
 npm run devbabel
-...
-**EN OTRA TERMINAL**
-...
+```
+## **EN OTRA TERMINAL**
+```
 cd reloj/frontend-vue
-...
+```
+```
 npm run serve
-...
+```
 
 abrir http://localhost:8080/
 
@@ -20,22 +22,38 @@ abrir http://localhost:8080/
 
 -------------------------------------------------------------
 
-**Para lanzar en modo produccion**
+# **Para lanzar en modo produccion**
 
-**EN UNA TERMINAL**
+
+## **EN UNA TERMINAL**
+```
 cd reloj/frontend-vue
+```
+```
 npm run build
+```
 
-**EN UN ADMINISTRADOR DE ARCHIVOS**
+## **EN UN ADMINISTRADOR DE ARCHIVOS**
+```
 Esperar a que termine de construir el proyecto, luego ir a la carpeta frontend-vue/dist y copiar todos los archivos dentro de esta
-
+```
+```
 Luego ir a reloj/your-clock/public y pegar los archivos (reemplazar los que ya existen si es necesario)
+```
 
-**EN OTRA TERMINAL**
+## **EN OTRA TERMINAL**
+```
 cd reloj/your-clock
+```
+```
 git add .
+```
+```
 git commit -m "descripcion del commit"
+```
+```
 git push heroku master
+```
 
 abrir https://your-clock.herokuapp.com/
 
@@ -43,11 +61,19 @@ abrir https://your-clock.herokuapp.com/
 
 -------------------------------------------------------------
 
-**Para desplegar en el repositorio de github**
+# **Para desplegar en el repositorio de github**
 
-**EN UNA TERMINAL**
+## **EN UNA TERMINAL**
+```
 cd reloj
+```
+```
 git add .
+```
+```
 git commit -m "descripcion del commit"
+```
+```
 git push
+```
 
